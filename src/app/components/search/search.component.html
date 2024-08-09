@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="form">
   <div class="relative w-full m-auto md:max-w-screen-md">
     <label for="Search" class="sr-only"> Search </label>
 
@@ -7,6 +7,7 @@
       id="Search"
       placeholder="¿En qué comida estás pensando?"
       class="w-full rounded-md border-gray-200 py-2 pe-10 pl-4 shadow-sm sm:text-sm"
+      formControlName="query"
     />
 
     <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
@@ -36,15 +37,12 @@
       name="HeadlineAct"
       id="HeadlineAct"
       class="mt-1.5 py-2 px-4 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm"
+      formControlName="category"
     >
       <option value="">Busca por categorías</option>
-      <option value="JM">John Mayer</option>
-      <option value="SRV">Stevie Ray Vaughn</option>
-      <option value="JH">Jimi Hendrix</option>
-      <option value="BBK">B.B King</option>
-      <option value="AK">Albert King</option>
-      <option value="BG">Buddy Guy</option>
-      <option value="EC">Eric Clapton</option>
+      @for (cat of categories; track $index) {
+        <option [value]="cat.strCategory">{{cat.strCategory}}</option>
+      }
     </select>
   </div>
 </form>

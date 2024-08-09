@@ -2,7 +2,9 @@
   <h1 class="text-center text-4xl mb-5">Meals App</h1>
 
   <div class="mb-5">
-    <app-search></app-search>
+    <app-search
+      (onSearch)="search($event)"
+    ></app-search>
   </div>
   @if (currentState === 'success') {
     <div class="flex flex-row flex-wrap gap-6 m-auto w-min lg:w-full">
