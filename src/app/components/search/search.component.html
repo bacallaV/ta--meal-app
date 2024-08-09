@@ -1,0 +1,50 @@
+<form>
+  <div class="relative w-full m-auto md:max-w-screen-md">
+    <label for="Search" class="sr-only"> Search </label>
+
+    <input
+      type="text"
+      id="Search"
+      placeholder="¿En qué comida estás pensando?"
+      class="w-full rounded-md border-gray-200 py-2 pe-10 pl-4 shadow-sm sm:text-sm"
+    />
+
+    <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
+      <button type="button" class="text-gray-600 hover:text-gray-700">
+        <span class="sr-only">Search</span>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-4 w-4"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+          />
+        </svg>
+      </button>
+    </span>
+  </div>
+
+  <div class="w-full m-auto md:max-w-screen-md">
+    <select
+      name="HeadlineAct"
+      id="HeadlineAct"
+      class="mt-1.5 py-2 px-4 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm"
+    >
+      <option value="">Busca por categorías</option>
+      <option value="JM">John Mayer</option>
+      <option value="SRV">Stevie Ray Vaughn</option>
+      <option value="JH">Jimi Hendrix</option>
+      <option value="BBK">B.B King</option>
+      <option value="AK">Albert King</option>
+      <option value="BG">Buddy Guy</option>
+      <option value="EC">Eric Clapton</option>
+    </select>
+  </div>
+</form>
