@@ -42,8 +42,8 @@ export class MealsService {
     return this.http.get<{ categories: Category[] }>(`${this.API_URL}/categories.php`);
   }
 
-  public getById(id: string): Observable<any> {
-    return this.http.get<any>(`${this.API_URL}/lookup.php`, {
+  public getById(id: string): Observable<{ meals: [Meal] | null }> {
+    return this.http.get<{ meals: [Meal] | null }>(`${this.API_URL}/lookup.php`, {
       params: { i: id },
     });
   }
