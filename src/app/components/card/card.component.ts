@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Meal, MealFromCategory } from 'app/models/meal.model';
 
 @Component({
   selector: 'app-card',
@@ -9,5 +10,6 @@ import { RouterModule } from '@angular/router';
   templateUrl: './card.component.html',
 })
 export class CardComponent {
-
+  @Input({ required: true })
+  public meal!: MealFromCategory;
 }

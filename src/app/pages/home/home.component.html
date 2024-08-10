@@ -8,18 +8,13 @@
   </div>
   @if (currentState === 'success') {
     <div class="flex flex-row flex-wrap gap-6 m-auto w-min lg:w-full">
-      <div class="w-80">
-        <app-card></app-card>
-      </div>
-      <div class="w-80">
-        <app-card></app-card>
-      </div>
-      <div class="w-80">
-        <app-card></app-card>
-      </div>
-      <div class="w-80">
-        <app-card></app-card>
-      </div>
+      @for (meal of meals; track $index) {
+        <div class="w-80">
+          <app-card [meal]="meal"></app-card>
+        </div>
+      } @empty {
+        <p class="text-sm text-red-800">Sin coincidencias</p>
+      }
     </div>
   } @else if (currentState === 'loading') {
     <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
